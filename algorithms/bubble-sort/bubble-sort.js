@@ -1,3 +1,5 @@
+// Bubble sort first / 2H
+
 // Create an array of numbers from 1 to 10
 const numbers = Array.from({length: 100}, (_, i) => i + 1);
 
@@ -16,8 +18,6 @@ console.log("shuffle", shuffledNumbers);
     if (index >= totalCount) {
       index = 0;
     }
-
-    // console.log("doing", arr, "points", index,index + 1);
 
     const isGreaterThan = arr[index] > arr[index + 1];
 
