@@ -1,3 +1,6 @@
+// Bubble sort review 1 / 28min
+
+
 // Shuffle the array using a clever method
 const numbers = Array.from({length: 100}, (_, i) => i + 1);
 
