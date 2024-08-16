@@ -4,33 +4,30 @@ const numbers = Array.from({length: 100}, (_, i) => i + 1);
 // Sort Random
 const randomList = numbers.sort(() => Math.random() - 0.5);
 
-console.log("entra", randomList);
+console.log("entra \n", randomList);
 
-(function bubbleSort(list) {
+(function selectionSort(list) {
   const size = list.length;
-  const end = size - 1;
 
-  let counter = 0;
   let index = 0;
 
-  while (counter <= end) {
-    if (index === end) {
-      index = 0;
-    }
+  while (index < size) {
+    const lastIndex = size - index;
 
-    const isGreaterThan = list[index] > list[index + 1];
+    const tempList = list.slice(0, lastIndex);
 
-    if (isGreaterThan) {
-      list.splice(index, 0, index + 1);
-      list.splice(index + 2, 1);
+    const maxValue = Math.max(...tempList);
 
-      counter = 0;
-    } else {
-      counter++;
-    }
+    const maxValueIndex = list.indexOf(maxValue);
 
-    index++;
+    list.splice(lastIndex, 0, list[maxValueIndex]);
+
+    list.splice(maxValueIndex, 1);
+
+    console.log("reduz \n", tempList);
+
+    index += 1;
   }
 
-  console.log("sai", list);
+  console.log("sai \n", list);
 })(randomList);
